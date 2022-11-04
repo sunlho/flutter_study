@@ -23,96 +23,66 @@ class OPHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('InputWidget'),
       ),
-      body: OPHomeContent(),
+      body: const OPHomeContent(),
     );
   }
 }
 
 class OPHomeContent extends StatelessWidget {
-  final usernameTextEditingController = TextEditingController();
-  final passwordTextEditingController = TextEditingController();
-
-  OPHomeContent({super.key});
+  const OPHomeContent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsetsDirectional.all(8),
-      child: Column(
-        children: <Widget>[
-          const TextField(
-            decoration: InputDecoration(
-              icon: Icon(
-                Icons.favorite,
-                color: Colors.red,
-              ),
-              labelText: 'Hello World',
+    return const PaddingDemo();
+  }
+}
+
+class PaddingDemo extends StatelessWidget {
+  const PaddingDemo({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        Padding(
+          padding: EdgeInsets.only(top: 5, bottom: 10),
+          child: Text(
+            'Hello Word',
+            style: TextStyle(
+              color: Colors.black,
+              backgroundColor: Colors.amber,
             ),
           ),
-          const SizedBox(
-            height: 5,
+        ),
+        Text(
+          'Hello Word',
+          style: TextStyle(
+            color: Colors.black,
+            backgroundColor: Colors.amber,
           ),
-          const TextField(
-            decoration: InputDecoration(
-              icon: Icon(
-                Icons.favorite,
-                color: Colors.red,
-              ),
-              border: OutlineInputBorder(),
-              hintText: 'Hello Flutter',
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          TextField(
-            controller: usernameTextEditingController,
-            decoration: InputDecoration(
-              icon: const Icon(
-                Icons.favorite,
-                color: Colors.red,
-              ),
-              border: const OutlineInputBorder(),
-              hintText: '请输入用户名',
-              filled: true,
-              fillColor: Colors.blue[100],
-            ),
-            onChanged: (value) => {print("onChange: $value")}, //  监听输入
-            onSubmitted: (value) => {print("onSubmit: $value")}, //  监听回车
-          ),
-          TextField(
-            controller: passwordTextEditingController,
-            decoration: const InputDecoration(
-              icon: Icon(
-                Icons.lock,
-                color: Colors.black,
-              ),
-              border: OutlineInputBorder(),
-            ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          SizedBox(
-            //  按钮拓展
-            width: double.infinity,
-            height: 40,
-            child: MaterialButton(
-              color: Colors.blue,
-              onPressed: () {
-                final username = usernameTextEditingController.text;
-                final password = passwordTextEditingController.text;
-                print("账号：$username 密码：$password");
-              },
-              child: const Text(
-                '登  陆',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          )
-        ],
+        ),
+      ],
+    );
+  }
+}
+
+class AlignDemo extends StatelessWidget {
+  const AlignDemo({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Align(
+      alignment: Alignment(0.5, 0.5),
+      widthFactor: 5,
+      heightFactor: 5,
+      child: Icon(
+        Icons.favorite,
+        color: Colors.red,
+        size: 50,
       ),
     );
   }
