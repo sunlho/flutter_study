@@ -93,9 +93,9 @@ class ButtonDemo extends StatelessWidget {
         ),
         MaterialButton(
           color: Colors.amber,
-          child: Row(
+          child: const Row(
             mainAxisSize: MainAxisSize.min,
-            children: const <Widget>[
+            children: <Widget>[
               Icon(
                 Icons.favorite,
                 color: Colors.red,

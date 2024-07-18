@@ -174,17 +174,14 @@ class ButtonRowDemo extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: MaterialButton(
         color: Colors.cyan,
-        child: Row(
+        child: const Row(
           /**
            * Row特点:
            * - 水平方向尽可能占用更大的空间
            *   * 水平方向希望包裹内容 设置mainAxisSize: MainAxisSize.min
            */
           // mainAxisSize: MainAxisSize.min,
-          children: const <Widget>[
-            Icon(Icons.favorite, color: Colors.red),
-            Text("喜欢")
-          ],
+          children: <Widget>[Icon(Icons.favorite, color: Colors.red), Text("喜欢")],
         ),
         onPressed: () => print('点击按钮'),
       ),

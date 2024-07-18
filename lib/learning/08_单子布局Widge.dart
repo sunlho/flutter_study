@@ -77,14 +77,13 @@ class PaddingDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         Padding(
           padding: EdgeInsets.only(top: 5, bottom: 10),
           child: Text(
             'Hello Word',
-            style:
-                TextStyle(color: Colors.black, backgroundColor: Colors.amber),
+            style: TextStyle(color: Colors.black, backgroundColor: Colors.amber),
           ),
         ),
         Text(

@@ -44,9 +44,9 @@ class OPTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const <Widget>[
+      children: <Widget>[
         Text('基础Text'),
         Text(
           'Text样式',
